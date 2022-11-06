@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
-// import s from './ContactItem.module.css';
+import {Li_Item, Btn} from './ContactItem.styled';
 
 const ContactItem = ({ id, name, number, deleteContact }) => {
    return (
-      <li id={id}>
+      <Li_Item id={id}>
          {name}: {number}
-         <button
+         <Btn
             type="button"
             onClick={() => deleteContact(id)}
          >
             Delete
-         </button>
-      </li>
+         </Btn>
+      </Li_Item>
    );
 };
 ContactItem.propType = {

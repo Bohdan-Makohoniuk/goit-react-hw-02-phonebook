@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-// import s from './ContactForm.module.css';
+import {Contct_Input} from './ContactForm.styled';
 
 const INITIALE_STATE = {
    name: '',
@@ -35,7 +35,7 @@ class ContactForm extends Component {
          <form onSubmit={this.onSubmit}>
             <label>
                Name
-               <input
+               <Contct_Input
                   onChange={this.onChange}
                   type="text"
                   name="name"
@@ -47,7 +47,7 @@ class ContactForm extends Component {
             </label>
             <label>
                Number
-               <input
+               <Contct_Input
                   onChange={this.onChange}
                   type="tel"
                   name="number"

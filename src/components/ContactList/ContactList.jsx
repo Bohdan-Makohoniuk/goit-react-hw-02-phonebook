@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import ContactItem from './ContactItem/ContactItem';
-// import s from './ContactList.module.css';
+import {UlList} from './ContactList.styled';
 
 const ContactList = ({ visibleContacts, deleteContact }) => {
    return (
-      <ul>
+      <UlList>
          {visibleContacts.map(({ id, name, number }) => (
             <ContactItem
                key={id}
@@ -14,7 +14,7 @@ const ContactList = ({ visibleContacts, deleteContact }) => {
                deleteContact={deleteContact}
             />
          ))}
-      </ul>
+      </UlList>
    );
 };
 

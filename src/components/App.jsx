@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Filter from './Filter/Filter';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
+import {Container} from '../App.styled'
 
 class App extends Component {
    state = {
@@ -47,7 +48,7 @@ class App extends Component {
       );
 
       return (
-         <div>
+         <Container>
             <h1>Phonebook</h1>
             <ContactForm
                onSubmit={this.onSubmit}
@@ -59,7 +60,7 @@ class App extends Component {
                visibleContacts={visibleContacts}
                deleteContact={this.deleteContact}
             />
-         </div>
+         </Container>
       );
    }
 }
