@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const Li_Item =styled.li`
+export const LiItem =styled.li`
     margin-bottom:10px;
     
 `

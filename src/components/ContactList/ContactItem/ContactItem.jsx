@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import {Li_Item, Btn} from './ContactItem.styled';
+import {LiItem, Btn} from './ContactItem.styled';
 
 const ContactItem = ({ id, name, number, deleteContact }) => {
    return (
-      <Li_Item id={id}>
+      <LiItem id={id}>
          {name}: {number}
          <Btn
             type="button"
@@ -11,7 +11,7 @@ const ContactItem = ({ id, name, number, deleteContact }) => {
          >
             Delete
          </Btn>
-      </Li_Item>
+      </LiItem>
    );
 };
 ContactItem.propType = {
