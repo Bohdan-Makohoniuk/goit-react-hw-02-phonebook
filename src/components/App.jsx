@@ -4,6 +4,9 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import {Container} from '../App.styled'
 
+
+      
+
 class App extends Component {
    state = {
       contacts: [
@@ -15,13 +18,8 @@ class App extends Component {
       filter: '',
    };
    onSubmit = newContact => {
-      this.setState(prevState => ({
-         contacts: [...prevState.contacts, newContact],
-      }));
-   };
-   checkNewContact = newContact => {
-      if (
-         this.state.contacts.find(
+     
+      if (this.state.contacts.find(
             contact =>
                contact.name.toLocaleLowerCase() ===
                newContact.name.toLocaleLowerCase()
@@ -30,16 +28,37 @@ class App extends Component {
          alert(newContact.name + ' is alredy in contacts');
          return true;
       }
-      return false;
+      this.setState(prevState => ({
+         contacts: [...prevState.contacts, newContact],
+      }));
    };
-   onChangeFilter = async e => {
-      await this.setState({ filter: e.target.value });
+
+   
+
+   // checkNewContact = newContact => {
+   //    if (this.state.contacts.find(
+   //          contact =>
+   //             contact.name.toLocaleLowerCase() ===
+   //             newContact.name.toLocaleLowerCase()
+   //       )
+   //    ) {
+   //       alert(newContact.name + ' is alredy in contacts');
+   //       return true;
+   //    }
+   //    return false;
+   // };
+   onChangeFilter =  e => {
+       this.setState({ filter: e.target.value });
    };
+
+
    deleteContact = id => {
       this.setState(prevState => ({
          contacts: prevState.contacts.filter(contact => contact.id !== id),
       }));
    };
+
+   
    render() {
       const { contacts, filter } = this.state;
       const normFilter = filter.toLocaleLowerCase();
@@ -52,7 +71,7 @@ class App extends Component {
             <h1>Phonebook</h1>
             <ContactForm
                onSubmit={this.onSubmit}
-               checkNewContact={this.checkNewContact}
+               // checkNewContact={this.checkNewContact}
             />
             <h2>Contacts</h2>
             <Filter filter={filter} onChange={this.onChangeFilter} />

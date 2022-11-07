@@ -20,9 +20,9 @@ class ContactForm extends Component {
          number,
          id: String(nanoid(5)),
       };
-      if (this.props.checkNewContact(newContact)) {
-         return;
-      }
+      
+
+      
       this.props.onSubmit(newContact);
       this.reset();
    };
